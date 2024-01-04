@@ -1,0 +1,23 @@
+{
+    "name": "EffortStar.EcsLiteDi.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e59bf9fc7d5a44b18a819a92edd46163",
+        "GUID:e06a58708b83247ca9dc984644f5b40b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.leopotam.ecslite.extendedsystems",
+            "expression": "",
+            "define": "ECSLITE_EXTENDED"
+        }
+    ],
+    "noEngineReferences": false
+}
