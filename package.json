@@ -1,10 +1,11 @@
 {
   "name": "games.effortstar.ecslite-di",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "LeoECS Lite DI",
   "description": "Dependency injection for LeoECS Lite",
   "unity": "2020.3",
   "licensesUrl": "https://choosealicense.com/licenses/mit/",
+  "changelogUrl": "https://github.com/EffortStar/ecslite-di/blob/master/CHANGELOG.md",
   "author": {
     "name": "Rhys van der Waerden",
     "email": "rhys@effortstar.com",
