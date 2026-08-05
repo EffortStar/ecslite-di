@@ -1,6 +1,6 @@
 {
   "name": "games.effortstar.ecslite-di",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "displayName": "LeoECS Lite DI",
   "description": "Dependency injection for LeoECS Lite",
   "unity": "2020.3",

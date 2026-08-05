@@ -28,17 +28,27 @@ namespace EffortStar.EcsLite.Di {
     }
 
     public static void Inject(object target, IEcsSystems systems, IReadOnlyList<object> injects) {
-      var fields = target.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-      foreach (var f in fields) {
-        var attributes = f.GetCustomAttributes(typeof(DiAttribute), true);
-        if (attributes.Length == 0) {
-          continue;
+	    Type targetType = target.GetType();
+      do
+      {
+        var fields = targetType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        foreach (var f in fields)
+        {
+          var attributes = f.GetCustomAttributes(typeof(DiAttribute), true);
+          if (attributes.Length == 0)
+          {
+            continue;
+          }
+
+          var diAttribute = (DiAttribute)attributes[0];
+          if (Attribute.IsDefined(f, typeof(DiAttribute)))
+          {
+            Inject(target, f, systems, diAttribute.WorldName, injects);
+          }
         }
-        var diAttribute = (DiAttribute) attributes[0];
-        if (Attribute.IsDefined(f, typeof(DiAttribute))) {
-          Inject(target, f, systems, diAttribute.WorldName, injects);
-        }
-      }
+
+        targetType = targetType.BaseType;
+      } while (targetType != typeof(object));
     }
 
     static object GetPool(EcsWorld world, Type type) {
